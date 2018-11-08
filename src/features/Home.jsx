@@ -1,14 +1,11 @@
 import React, {PureComponent} from 'react'
-import axios from '../service/axiosConfig'
-import LoginForm from '../components/LoginCom'
+import HomeCp from '../components/Home'
 export default class Home extends PureComponent{
 
-    componentDidMount(){
-        axios.get('api/list')
-    }
+
     render(){
         return (
-            <LoginForm/>
+            <HomeCp/>
         )
     }
 }

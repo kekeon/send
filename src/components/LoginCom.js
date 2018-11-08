@@ -1,9 +1,13 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import {Link } from 'react-router-dom'
+
+
+import {withRouter} from 'react-router-dom'
 
 import homeService from '../service/homeService'
 
-export default class Login extends React.Component {
+ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {user: '',pwd:''};
@@ -21,8 +25,11 @@ export default class Login extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state);
-        homeService().login(this.state)
+
+        homeService().login(this.state).then(res=>{
+            console.log(res);
+            this.props.history.push("/home")
+        })
         event.preventDefault();
     }
 
@@ -43,6 +50,7 @@ export default class Login extends React.Component {
       }
     `}</style>
                 <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
+
                     <Grid.Column style={{ maxWidth: 450 }}>
                         <Header as='h2' color='teal' textAlign='center'>
                             <Image src='./assets/logo.png' /> Log-in to your account
@@ -71,9 +79,15 @@ export default class Login extends React.Component {
                         <Message>
                             New to us? <a href='#'>Sign Up</a>
                         </Message>
+
                     </Grid.Column>
                 </Grid>
             </div>
         )
     }
 }
+
+export default withRouter((match, location, history)=>{
+
+    return new Login(match, location, history)
+})

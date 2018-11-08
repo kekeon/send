@@ -11,8 +11,28 @@ export default class HomeCp extends React.Component {
         const { activeItem } = this.state
 
         return (
-            <Menu secondary>
-                <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+
+            <Menu secondary className="header-menu">
+
+                <style>{`
+     .ui.secondary.header-menu {
+     padding:0 15px;
+     background: #00b5ad;
+     }
+
+     .ui.secondary.header-menu a {
+     color: #f1f1f1;
+     }
+     .ui.secondary.header-menu a::selection {
+     color: #f7bd13eb;
+     }
+
+     .ui.secondary.header-menu .active.item {
+     color: #f7bd13eb;
+     }
+    `}</style>
+
+                <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}/>
                 <Menu.Item
                     name='messages'
                     active={activeItem === 'messages'}

@@ -8,6 +8,7 @@ export default class Login extends PureComponent{
     }
     render(){
         return (
+
             <LoginForm/>
         )
     }

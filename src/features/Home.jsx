@@ -1,11 +1,20 @@
 import React, {PureComponent} from 'react'
 import HomeCp from '../components/Home'
-export default class Home extends PureComponent{
+import SideMenu from '../components/SideMenu'
+export default class Home extends PureComponent {
 
 
     render(){
         return (
-            <HomeCp/>
+            <div id="main-page">
+                <HomeCp/>
+                <div id="main-content">
+                    <SideMenu/>
+                    <div id="content">
+                        <h4>content</h4>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

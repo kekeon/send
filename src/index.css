@@ -12,3 +12,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#root {
+  height: 100%;
+}
+
+#main-page {
+  height: 100%;
+}
+
+#side-menu {
+  height: 100%;
+  width: 150px;
+}
+
+#main-content {
+  height: calc(100% - 45px);
+  display: flex;
+}
+#side-menu .ui.menu{
+  background:  #f4f3f9;
+}
+
+
+#side-menu {
+  background:  #f4f3f9;
+}
+
+#side-menu .ui.menu .item {
+  border-bottom: 1px solid #00b5ad;
+  color: #00b5ad;
+}
+
+#content {
+  width: calc(100% - 150px);
+  height: 100%;
+  background: #ccc;
+}

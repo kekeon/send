@@ -18,6 +18,9 @@ export default class HomeCp extends React.Component {
      .ui.secondary.header-menu {
      padding:0 15px;
      background: #00b5ad;
+     margin:0;
+     height:45px;
+     line-height:45px;
      }
 
      .ui.secondary.header-menu a {
@@ -28,7 +31,7 @@ export default class HomeCp extends React.Component {
      }
 
      .ui.secondary.header-menu .active.item {
-     color: #f7bd13eb;
+     color: #ffcc00;
      }
     `}</style>
 

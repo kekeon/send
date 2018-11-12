@@ -1,0 +1,20 @@
+
+@import "../style/constant";
+.ui.secondary.header-menu {
+  padding:0 15px;
+  background: $green;
+  margin:0;
+  height:45px;
+  line-height:45px;
+}
+
+.ui.secondary.header-menu a {
+  color: #f1f1f1;
+}
+.ui.secondary.header-menu a::selection {
+  color: #f7bd13eb;
+}
+
+.ui.secondary.header-menu .active.item {
+  color: $yellow;
+}

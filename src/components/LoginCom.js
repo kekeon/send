@@ -53,7 +53,7 @@ import homeService from '../service/homeService'
 
                     <Grid.Column style={{ maxWidth: 450 }}>
                         <Header as='h2' color='teal' textAlign='center'>
-                            <Image src='./assets/logo.png' /> Log-in to your account
+                            <Image src='../assets/logo.png' /> Log-in to your account
                         </Header>
                         <Form size='large'>
                             <Segment stacked>

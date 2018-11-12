@@ -14,27 +14,6 @@ export default class HomeCp extends React.Component {
 
             <Menu secondary className="header-menu">
 
-                <style>{`
-     .ui.secondary.header-menu {
-     padding:0 15px;
-     background: #00b5ad;
-     margin:0;
-     height:45px;
-     line-height:45px;
-     }
-
-     .ui.secondary.header-menu a {
-     color: #f1f1f1;
-     }
-     .ui.secondary.header-menu a::selection {
-     color: #f7bd13eb;
-     }
-
-     .ui.secondary.header-menu .active.item {
-     color: #ffcc00;
-     }
-    `}</style>
-
                 <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}/>
                 <Menu.Item
                     name='messages'

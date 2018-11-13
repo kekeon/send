@@ -28,7 +28,7 @@ import homeService from '../service/homeService'
 
         homeService().login(this.state).then(res=>{
             console.log(res);
-            this.props.history.push("/home")
+            this.props.history.push("/main")
         })
         event.preventDefault();
     }

@@ -1,20 +1,20 @@
-import React, {PureComponent} from 'react'
+import React from 'react'
 import HomeCp from '../components/Home'
 import SideMenu from '../components/SideMenu'
-export default class Home extends PureComponent {
+import {RouteWithSubRoutes} from "../routers/router"
 
-
-    render(){
-        return (
-            <div id="main-page">
-                <HomeCp/>
-                <div id="main-content">
-                    <SideMenu/>
-                    <div id="content">
-                        <h4>content</h4>
-                    </div>
+export default function Home({ routes }) {
+    return (
+        <div id="main-page">
+            <HomeCp/>
+            <div id="main-content">
+                <SideMenu/>
+                <div id="content">
+                    {routes.map((route, i) => (
+                        <RouteWithSubRoutes key={i} {...route} />
+                    ))}
                 </div>
             </div>
-        )
-    }
+        </div>
+    );
 }

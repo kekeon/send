@@ -1,10 +1,11 @@
 import React from 'react'
-import {Route,Router,BrowserRouter,Switch } from 'react-router-dom'
-import createBrowserHistory from "history/createBrowserHistory";
+import {Route,BrowserRouter,Switch } from 'react-router-dom'
 import {routes} from "./routeConfig"
 
 import Login from '../features/Login.jsx'
-function RouteWithSubRoutes(route) {
+
+
+export const  RouteWithSubRoutes = (route) => {
     return (
         <Route
             path={route.path}
@@ -15,8 +16,8 @@ function RouteWithSubRoutes(route) {
     );
 }
 
-const RouterConfig = ()=>{
-   // const history = createBrowserHistory()
+
+export const  RouterConfig = ()=>{
     return (
         <BrowserRouter>
                 <Switch>
@@ -29,4 +30,3 @@ const RouterConfig = ()=>{
         </BrowserRouter>
     )
 }
-export default RouterConfig

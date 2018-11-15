@@ -14,15 +14,15 @@ export default class HomeCp extends React.Component {
 
             <Menu secondary className="header-menu">
 
-                <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}/>
+                <Menu.Item name='我的' active={activeItem === '我的'} onClick={this.handleItemClick}/>
                 <Menu.Item
-                    name='messages'
-                    active={activeItem === 'messages'}
+                    name='历史记录'
+                    active={activeItem === '历史记录'}
                     onClick={this.handleItemClick}
                 />
                 <Menu.Item
-                    name='friends'
-                    active={activeItem === 'friends'}
+                    name='团队'
+                    active={activeItem === '团队'}
                     onClick={this.handleItemClick}
                 />
                 <Menu.Menu position='right'>
@@ -30,7 +30,7 @@ export default class HomeCp extends React.Component {
                         <Input icon='search' placeholder='Search...' />
                     </Menu.Item>
                     <Menu.Item
-                        name='logout'
+                        name='设置'
                         active={activeItem === 'logout'}
                         onClick={this.handleItemClick}
                     />

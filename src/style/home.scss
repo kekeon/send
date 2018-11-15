@@ -18,3 +18,7 @@
 .ui.secondary.header-menu .active.item {
   color: $yellow;
 }
+
+.header-menu .item:hover {
+  color: $yellow!important;
+}

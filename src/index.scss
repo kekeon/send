@@ -1,4 +1,10 @@
 @import "./style/constant";
+@import "./style/home";
+@import "./style/common";
+
+
+
+@import "./style/CreateProject";
 
 body {
   margin: 0;
@@ -49,5 +55,5 @@ code {
 #content {
   width: calc(100% - 150px);
   height: 100%;
-  background: #ccc;
+  background: #f3f3f3;
 }

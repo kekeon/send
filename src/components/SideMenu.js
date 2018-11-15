@@ -15,7 +15,14 @@ export default  class SideMenu extends  React.Component {
             <div id="side-menu">
                 <Sidebar.Pushable as={Segment}>
                     <Sidebar as={Menu} animation='overlay' icon='labeled' inverted vertical visible width='thin'>
-                        <Menu.Item as={Link} to="/main/operation">home1</Menu.Item>
+                        <Menu.Item as={Link} to="/main/operation">
+                            <Button animated='vertical'>
+                                <Button.Content hidden>创建项目</Button.Content>
+                                <Button.Content visible>
+                                    <Icon name='add circle' />
+                                </Button.Content>
+                            </Button>
+                        </Menu.Item>
                         <Menu.Item as={Link} to="/main/operation-record">home2</Menu.Item>
                         <Menu.Item as='a'>home2</Menu.Item>
                     </Sidebar>

@@ -1,0 +1,16 @@
+
+#side-menu {
+  .menu .button {
+    width: 100%!important;
+    color: $green!important;
+    background: $gray;
+    .hidden {
+      font-size: 12px!important;
+      font-weight: 300!important;
+    }
+  }
+}
+
+#content {
+  padding: 20px;
+}

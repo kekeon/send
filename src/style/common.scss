@@ -14,3 +14,49 @@
 #content {
   padding: 20px;
 }
+
+textarea {
+  resize:none !important;
+}
+
+/* man page */
+.main-page {
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .page-box {
+    box-shadow: 0 0 10px 10px #ddd;
+    width: 60%;
+    height: 50%;
+    min-width: 940px;
+    min-height: 400px;
+
+    .form {
+      padding: 40px;
+    }
+  }
+}
+
+/* invite */
+
+#invite {
+  .page-box h5.header {
+    margin-bottom: 10px;
+  }
+
+  .page-box .msg {
+    margin-bottom: 10px;
+    color: #ccc;
+  }
+
+  .page-box {
+    textarea {
+      height: 200px;
+    }
+  }
+}

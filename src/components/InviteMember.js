@@ -3,7 +3,7 @@ import React from 'react'
 import { Form, TextArea, Button,Header, Icon,Container } from 'semantic-ui-react'
 
 
-export default class OperationRecord extends React.Component {
+export default class InviteMember extends React.Component {
 //envelope outline
 
     render(){

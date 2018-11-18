@@ -2,6 +2,10 @@ import React from 'react'
 import { Input, Menu } from 'semantic-ui-react'
 
 export default class HomeCp extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
 
     state = { activeItem: 'home' }
 

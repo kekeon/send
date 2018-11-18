@@ -7,7 +7,7 @@ const options = [
     { key: 'p', text: '个人', value: 'pritive' },
     { key: 't', text: '团队', value: 'public' },
 ]
-export default class Operation extends React.Component {
+export default class CreateProject extends React.Component {
 
     state = {}
 

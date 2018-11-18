@@ -15,7 +15,7 @@ export default  class SideMenu extends  React.Component {
             <div id="side-menu">
                 <Sidebar.Pushable as={Segment}>
                     <Sidebar as={Menu} animation='overlay' icon='labeled' inverted vertical visible width='thin'>
-                        <Menu.Item as={Link} to="/main/operation">
+                        <Menu.Item as={Link} to="/main/create-project">
                             <Button animated='vertical'>
                                 <Button.Content hidden>创建项目</Button.Content>
                                 <Button.Content visible>
@@ -23,8 +23,8 @@ export default  class SideMenu extends  React.Component {
                                 </Button.Content>
                             </Button>
                         </Menu.Item>
-                        <Menu.Item as={Link} to="/main/operation-record">home2</Menu.Item>
-                        <Menu.Item as='a'>home2</Menu.Item>
+                        <Menu.Item as={Link} to="/main/invite-member">邀请战友</Menu.Item>
+                        <Menu.Item as={Link} to="/main/project-menu"  className="clearfix">项目menu <Icon name="ellipsis horizontal float-right"></Icon></Menu.Item>
                     </Sidebar>
                 </Sidebar.Pushable>
             </div>

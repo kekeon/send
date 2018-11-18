@@ -1,3 +1,25 @@
+/*  utils end*/
+.float-left {
+  float: left!important;;
+}
+
+.float-right {
+  float: right!important;;
+}
+
+.clearfix:affter {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.clearfix {
+  *zoom:1;
+}
+
+/*  utils start */
+
 
 #side-menu {
   .menu .button {
@@ -8,6 +30,22 @@
       font-size: 12px!important;
       font-weight: 300!important;
     }
+  }
+  .ui.segment,
+  .ui.thin.left.sidebar,
+  .ui.thin.right.sidebar {
+    width: 180px;
+  }
+  .ui.sidebar.menu i.ellipsis  {
+    display: none;
+    margin: 0!important;
+    margin-right: 10px;
+    font-weight: normal;
+    font-size: 16px!important;
+  }
+
+  .ui.sidebar.menu:hover i.ellipsis {
+    display: inline-block;
   }
 }
 

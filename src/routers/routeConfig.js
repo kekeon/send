@@ -1,7 +1,8 @@
 import React from 'react'
 import Home from '../features/Home.jsx'
-import Operation from "../components/Operation"
-import OperationRecord from "../components/OperationRecord"
+import createProject from "../components/CreateProject"
+import inviteMember from "../components/InviteMember"
+import ProjectMenu from "../components/ProjectMenu"
 
 export const routes = [
     {
@@ -9,12 +10,16 @@ export const routes = [
         component: Home,
         routes: [
             {
-                path: "/main/operation",
-                component: Operation
+                path: "/main/create-project",
+                component: createProject
             },
             {
-                path: "/main/operation-record",
-                component: OperationRecord
+                path: "/main/invite-member",
+                component: inviteMember
+            },
+            {
+                path: "/main/project-menu",
+                component: ProjectMenu
             }
         ]
     }

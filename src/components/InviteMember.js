@@ -8,8 +8,8 @@ export default class InviteMember extends React.Component {
 
     render(){
         return(
-            <section class="main-page" id="invite">
-                <div class="page-box">
+            <section className="main-page" id="invite">
+                <div className="page-box">
                     <Form>
                         <Header as='h5'>
                             <Icon name='envelope outline' />

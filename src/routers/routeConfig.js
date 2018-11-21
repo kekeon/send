@@ -2,7 +2,7 @@ import React from 'react'
 import Home from '../features/Home.jsx'
 import createProject from "../components/CreateProject"
 import inviteMember from "../components/InviteMember"
-import ProjectMenu from "../components/ProjectMenu"
+import RequestPage from "../components/RequestPage"
 
 export const routes = [
     {
@@ -18,8 +18,8 @@ export const routes = [
                 component: inviteMember
             },
             {
-                path: "/main/project-menu",
-                component: ProjectMenu
+                path: "/main/request",
+                component: RequestPage
             }
         ]
     }

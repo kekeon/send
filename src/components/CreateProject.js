@@ -16,8 +16,8 @@ export default class CreateProject extends React.Component {
     render() {
         const { value } = this.state
         return (
-            <section id="create-project" class="main-page">
-                <div class="page-box">
+            <section id="create-project" className="main-page">
+                <div className="page-box">
                     <Form>
                         <Form.Group widths='equal'>
                             <Form.Input fluid label='项目名称' placeholder='First name' />

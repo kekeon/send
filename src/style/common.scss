@@ -53,6 +53,32 @@
   .ellipsis-tool {
     position: relative;
   }
+
+  .file-list {
+    i {
+      font-size: 14px!important;
+      margin: 0!important;
+      color: $green;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border: none;
+      .content {
+        display: inline-block;
+      }
+
+      .header {
+        text-align: left;
+        font-size: 12px;
+        font-weight: normal;
+        color: #666;
+      }
+    }
+  }
 }
 /* side menu end */
 #content {

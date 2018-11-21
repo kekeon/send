@@ -6,6 +6,7 @@
 
 @import "./style/CreateProject";
 @import "./style/ProjectMenu";
+@import "style/RequestPage";
 body {
   margin: 0;
   padding: 0;
@@ -47,9 +48,10 @@ code {
   background:  #f4f3f9;
 }
 
-#side-menu .ui.menu .item {
+#side-menu .ui.menu a.item {
   border-bottom: 1px solid $green;
   color: $green;
+  text-align: left;
 }
 
 #content {

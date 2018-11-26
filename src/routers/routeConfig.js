@@ -3,6 +3,7 @@ import Home from '../features/Home.jsx'
 import createProject from "../components/CreateProject"
 import inviteMember from "../components/InviteMember"
 import RequestPage from "../components/RequestPage"
+import CreateRequest from "../components/CreateRequest"
 
 export const routes = [
     {
@@ -16,6 +17,10 @@ export const routes = [
             {
                 path: "/main/invite-member",
                 component: inviteMember
+            },
+            {
+                path: "/main/create-request",
+                component: CreateRequest
             },
             {
                 path: "/main/request",

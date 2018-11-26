@@ -12,12 +12,11 @@ export default class RequestPage extends React.Component {
             <section id="request-page">
                 <section className="request-box">
                     <Form>
-                        <Header as='h5' className="header-title"><Icon name="target" />发送请求</Header>
+                        <Header as='h5' className="header-title"><Icon name="target" />创建请求</Header>
                         <Form.Field inline className="form-item">
                             <label>名称</label>
                             <input placeholder='请输入名称' className="input-name"/>
                         </Form.Field>
-
                         <Form.Field inline className="form-item">
                             <label>URL</label>
                             <div className="form-select">
@@ -25,15 +24,8 @@ export default class RequestPage extends React.Component {
                                 <input placeholder='请求地址' />
                             </div>
                         </Form.Field>
-
                         <Form.Field inline className="form-item">
-                            <label>请求头</label>
-                            <input placeholder='key' className="input-key"/>
-                            <input placeholder='value' className="input-value"/>
-                        </Form.Field>
-
-                        <Form.Field inline className="form-item">
-                            <label>response</label>
+                            <label>描述</label>
                             <TextArea placeholder='请输入文档描述'/>
                         </Form.Field>
                         <Form.Field>

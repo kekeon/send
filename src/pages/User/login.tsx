@@ -17,8 +17,8 @@ class Login extends React.Component {
   render() {
     const {getFieldDecorator} = this.props.form;
     return (
-      <Row>
-        <Col span={6} offset={6}>
+      <Row type="flex" justify="center" align="middle" className="login-row">
+        <Col span={6}>
           <Form onSubmit={this.handleSubmit} className="login-form">
             <Form.Item>
               {getFieldDecorator('userName', {

@@ -6,3 +6,7 @@ html, body, #root {
 body {
   margin: 0;
 }
+
+.login-row {
+  height: calc(100vh - 110px);
+}

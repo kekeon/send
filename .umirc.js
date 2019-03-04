@@ -8,7 +8,7 @@ export default {
       antd: true,
       dva: true,
       dynamicImport: false,
-      title: 'my-app',
+      title: 'send',
       dll: false,
 
       routes: {

@@ -16,8 +16,8 @@ class Login extends React.Component {
     }
     render() {
         const { getFieldDecorator } = this.props.form;
-        return (React.createElement(Row, null,
-            React.createElement(Col, { span: 6, offset: 6 },
+        return (React.createElement(Row, { type: "flex", justify: "center", align: "middle", className: "login-row" },
+            React.createElement(Col, { span: 6 },
                 React.createElement(Form, { onSubmit: this.handleSubmit, className: "login-form" },
                     React.createElement(Form.Item, null, getFieldDecorator('userName', {
                         rules: [{ required: true, message: 'Please input your username!' }],

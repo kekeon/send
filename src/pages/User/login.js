@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Button, Checkbox, Form, Icon, Input, Row, Col } from 'antd';
-//import "./index.css";
+import userService from "../../service/userService.js";
 class Login extends React.Component {
     constructor() {
         super(...arguments);
@@ -11,6 +11,10 @@ class Login extends React.Component {
                 if (!err) {
                     console.log('Received values of form: ', values);
                 }
+                let payload = {};
+                userService().login(payload).then(res => {
+                    console.log(res);
+                });
             });
         };
     }

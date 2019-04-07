@@ -1,2 +1,2 @@
 
-const LOGIN = "/login"
+export const LOGIN = "/login"

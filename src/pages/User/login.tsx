@@ -1,8 +1,8 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import {Button, Checkbox, Form, Icon, Input, Row, Col} from 'antd';
+import userService from "../../service/userService.js"
 
-//import "./index.css";
 
 class Login extends React.Component {
   handleSubmit = (e) => {
@@ -11,6 +11,11 @@ class Login extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values);
       }
+
+      let payload = {}
+      userService().login(payload).then(res=>{
+        console.log(res);
+      })
     });
   }
 

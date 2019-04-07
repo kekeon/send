@@ -1,5 +1,6 @@
 
 // ref: https://umijs.org/config/
+var path = require('path');
 export default {
   treeShaking: true,
   plugins: [
@@ -18,4 +19,11 @@ export default {
       },
     }],
   ],
+  "proxy": {
+    "/api": {
+      "target": "127.0.0.1:8090",
+      "changeOrigin": true,
+    }
+  }
 }
+

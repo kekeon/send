@@ -22,7 +22,7 @@ export default {
   "proxy": {
     "/api": {
       "target": "127.0.0.1:8090",
-      "changeOrigin": true,
+      "changeOrigin": false,
     }
   }
 }

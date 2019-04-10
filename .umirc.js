@@ -1,6 +1,7 @@
 
 // ref: https://umijs.org/config/
 var path = require('path');
+var route = require('./routes/route.config');
 export default {
   treeShaking: true,
   plugins: [
@@ -12,11 +13,7 @@ export default {
       title: 'send',
       dll: false,
 
-      routes: {
-        exclude: [
-          /components\//,
-        ],
-      },
+      routes: route.routers,
     }],
   ],
   "proxy": {

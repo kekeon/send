@@ -8,7 +8,7 @@ export default {
           token:"token"
         }
       });
-    },3 * 1000)
+    },1 * 1000)
   }
 
 }

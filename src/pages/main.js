@@ -13,8 +13,8 @@ const Content = Layout.Content;
 
 export default class Main extends React.Component {
 
-
   render() {
+    const { children } = this.props;
     return (
       <Layout className={styles['main-page']}>
         <NavHeader></NavHeader>
@@ -27,7 +27,7 @@ export default class Main extends React.Component {
               background: '#fff', padding: 24, margin: 0, minHeight: 280,
             }}
             >
-              Content
+              {children}
             </Content>
           </Layout>
         </Layout>

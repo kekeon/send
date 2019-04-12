@@ -1,12 +1,21 @@
+
+
 exports.routers  = [
   {
     path: '/',
-    component: './page/index',
+    component: './pages/index',
   },
 
   // app
   {
     path: '/main',
-    component: './page/main',
+    component: './pages/main',
+    routes: [
+      {
+        path: '/main/doc-edit',
+        name: 'DocEdit',
+        component: './DocLibrary/DocEdit',
+      }
+    ]
   }
 ];

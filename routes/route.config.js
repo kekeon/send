@@ -1,21 +1,25 @@
 
 
 exports.routers  = [
-  {
-    path: '/',
-    component: './pages/index',
-  },
 
   // app
   {
-    path: '/main',
-    component: './pages/main',
+    path: '/doc',
+    component: '../layouts/BasicLayout',
     routes: [
       {
-        path: '/main/doc-edit',
-        name: 'DocEdit',
-        component: './DocLibrary/DocEdit',
-      }
+        path: '/doc/edit',
+        component: './Doc/DocEdit',
+      },{
+        component: '404',
+      },
     ]
-  }
+  },
+  {
+    path: '/',
+    component: './index',
+  },
+  {
+    component: '404',
+  },
 ];

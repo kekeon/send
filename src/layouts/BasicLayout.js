@@ -15,6 +15,7 @@ export default class Main extends React.Component {
 
   render() {
     const { children } = this.props;
+    console.log(children);
     return (
       <Layout className={styles['main-page']}>
         <NavHeader></NavHeader>

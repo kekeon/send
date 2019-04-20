@@ -4,6 +4,7 @@ import NavHeaderStyles from '../style/NavHeader.scss';
 import router from 'umi/router';
 
 
+
 const Header = Layout.Header;
 
 
@@ -12,7 +13,7 @@ export default class NavHeader extends React.Component {
 
   toPage(prop){
     console.log(prop);
-    if(prop.key === '/main/doc-edit') {
+    if(prop.key === '/doc/edit') {
       router.push(prop.key)
     }
   }
@@ -24,13 +25,13 @@ export default class NavHeader extends React.Component {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={['/main/doc-edit']}
+          defaultSelectedKeys={['/doc/edit']}
           style={{ lineHeight: '40px' }}
           onClick={this.toPage}
         >
-          <Menu.Item key="/main/doc-edit">文档库</Menu.Item>
-          <Menu.Item key="/main/doc-history">历史记录</Menu.Item>
-          <Menu.Item key="/main/doc-member">成员管理</Menu.Item>
+          <Menu.Item key="/doc/edit">文档库</Menu.Item>
+          <Menu.Item key="/doc/history">历史记录</Menu.Item>
+          <Menu.Item key="/doc/member">成员管理</Menu.Item>
         </Menu>
       </Header>
     )

@@ -2,7 +2,7 @@ import React from "react"
 import {Button, Form, Icon, Input,} from 'antd';
 
 
-export default class DocEdit extends React.Component {
+class DocEdit extends React.Component {
 
 
   componentDidMount() {
@@ -67,4 +67,6 @@ export default class DocEdit extends React.Component {
     );
   }
 }
+const docEdit = Form.create()(DocEdit)
 
+export default docEdit

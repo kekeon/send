@@ -12,10 +12,9 @@ export default {
       dynamicImport: false,
       title: 'send',
       dll: false,
-
-      routes: route.routers,
     }],
   ],
+  routes: route.routers,
   "proxy": {
     "/api": {
       "target": "127.0.0.1:8090",

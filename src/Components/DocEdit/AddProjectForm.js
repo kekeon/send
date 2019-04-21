@@ -1,8 +1,12 @@
 import React from "react"
-import {Button, Form, Icon, Input,} from 'antd';
+import {Button, Form, Icon, Input, Modal} from 'antd';
 
 
 class AddProjectForm extends React.Component {
+
+
+  state = {visible: false}
+
 
   componentDidMount() {
     // To disabled submit button at the beginning.
@@ -24,48 +28,66 @@ class AddProjectForm extends React.Component {
 
   render() {
     const {
-      getFieldDecorator, getFieldsError, getFieldError, isFieldTouched,
+      getFieldDecorator,
+      getFieldsError,
+      getFieldError,
+      isFieldTouched,
     } = this.props.form;
+
+    const {
+      visible,
+      closeModal
+    } = this.props
 
     // Only show error after a field is touched.
     const userNameError = isFieldTouched('userName') && getFieldError('userName');
     const passwordError = isFieldTouched('password') && getFieldError('password');
     return (
-      <Form layout="inline" onSubmit={this.handleSubmit}>
-        <Form.Item
-          validateStatus={userNameError ? 'error' : ''}
-          help={userNameError || ''}
-        >
-          {getFieldDecorator('userName', {
-            rules: [{required: true, message: 'Please input your username!'}],
-          })(
-            <Input prefix={<Icon type="user" style={{color: 'rgba(0,0,0,.25)'}}/>} placeholder="Username"/>
-          )}
-        </Form.Item>
-        <Form.Item
-          validateStatus={passwordError ? 'error' : ''}
-          help={passwordError || ''}
-        >
-          {getFieldDecorator('password', {
-            rules: [{required: true, message: 'Please input your Password!'}],
-          })(
-            <Input prefix={<Icon type="lock" style={{color: 'rgba(0,0,0,.25)'}}/>} type="password"
-                   placeholder="Password"/>
-          )}
-        </Form.Item>
-        <Form.Item>
-          <Button
-            type="primary"
-            htmlType="submit"
-            disabled={this.hasErrors(getFieldsError())}
+
+      <Modal
+        title="创建项目"
+        visible={visible}
+        onOk={closeModal}
+        onCancel={closeModal}
+      >
+        <Form layout="inline" onSubmit={this.handleSubmit}>
+          <Form.Item
+            validateStatus={userNameError ? 'error' : ''}
+            help={userNameError || ''}
           >
-            Log in
-          </Button>
-        </Form.Item>
-      </Form>
+            {getFieldDecorator('userName', {
+              rules: [{required: true, message: 'Please input your username!'}],
+            })(
+              <Input prefix={<Icon type="user" style={{color: 'rgba(0,0,0,.25)'}}/>} placeholder="Username"/>
+            )}
+          </Form.Item>
+          <Form.Item
+            validateStatus={passwordError ? 'error' : ''}
+            help={passwordError || ''}
+          >
+            {getFieldDecorator('password', {
+              rules: [{required: true, message: 'Please input your Password!'}],
+            })(
+              <Input prefix={<Icon type="lock" style={{color: 'rgba(0,0,0,.25)'}}/>} type="password"
+                     placeholder="Password"/>
+            )}
+          </Form.Item>
+          <Form.Item>
+            <Button
+              type="primary"
+              htmlType="submit"
+              disabled={this.hasErrors(getFieldsError())}
+            >
+              Log in
+            </Button>
+          </Form.Item>
+        </Form>
+      </Modal>
     );
   }
 }
+
 const addProject = Form.create()(AddProjectForm)
 
 export default addProject
+

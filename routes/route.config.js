@@ -10,7 +10,16 @@ exports.routers  = [
       {
         path: '/doc/edit',
         component: './Doc/DocEdit',
-      },{
+      },
+      {
+        path: '/doc/history',
+        component: './Doc/History',
+      },
+      {
+        path: '/doc/member',
+        component: './Doc/Member',
+      },
+      {
         component: '404',
       },
     ]

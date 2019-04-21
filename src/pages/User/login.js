@@ -18,7 +18,7 @@ class Login extends React.Component {
       let payload = {}
       userService().login(payload).then(res=>{
         console.log(res);
-        router.push('/doc')
+        router.push('/doc/edit')
       })
     });
   }

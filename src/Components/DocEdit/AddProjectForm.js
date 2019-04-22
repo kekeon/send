@@ -1,5 +1,5 @@
 import React from "react"
-import {Button, Form, Icon, Input, Modal} from 'antd';
+import {Button, Form, Icon, Input, Modal, Select} from 'antd';
 
 
 class AddProjectForm extends React.Component {
@@ -42,6 +42,19 @@ class AddProjectForm extends React.Component {
     // Only show error after a field is touched.
     const userNameError = isFieldTouched('userName') && getFieldError('userName');
     const passwordError = isFieldTouched('password') && getFieldError('password');
+
+    const SelectBefore = (
+      <Select defaultValue="GET" style={{width: '90px'}}>
+        <Select.Option value="GET">GET</Select.Option>
+        <Select.Option value="POST">POST</Select.Option>
+        <Select.Option value="PUT">PUT</Select.Option>
+        <Select.Option value="DELETE">DELETE</Select.Option>
+        <Select.Option value="PATCH">PATCH</Select.Option>
+        <Select.Option value="PATCH">PATCH</Select.Option>
+        <Select.Option value="OPTIONS">OPTIONS</Select.Option>
+      </Select>
+    );
+
     return (
 
       <Modal
@@ -55,11 +68,7 @@ class AddProjectForm extends React.Component {
             validateStatus={userNameError ? 'error' : ''}
             help={userNameError || ''}
           >
-            {getFieldDecorator('userName', {
-              rules: [{required: true, message: 'Please input your username!'}],
-            })(
-              <Input prefix={<Icon type="user" style={{color: 'rgba(0,0,0,.25)'}}/>} placeholder="Username"/>
-            )}
+            <Input addonBefore={SelectBefore} placeholder="如：/login" allowClear/>
           </Form.Item>
           <Form.Item
             validateStatus={passwordError ? 'error' : ''}

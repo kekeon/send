@@ -28,10 +28,7 @@ class AddProjectForm extends React.Component {
 
   render() {
     const {
-      getFieldDecorator,
-      getFieldsError,
-      getFieldError,
-      isFieldTouched,
+      getFieldsError
     } = this.props.form;
 
     const {
@@ -39,47 +36,44 @@ class AddProjectForm extends React.Component {
       closeModal
     } = this.props
 
-    // Only show error after a field is touched.
-    const userNameError = isFieldTouched('userName') && getFieldError('userName');
-    const passwordError = isFieldTouched('password') && getFieldError('password');
 
     const SelectBefore = (
-      <Select defaultValue="GET" style={{width: '90px'}}>
+      <Select defaultValue="GET" style={{width: '120px'}}>
         <Select.Option value="GET">GET</Select.Option>
         <Select.Option value="POST">POST</Select.Option>
         <Select.Option value="PUT">PUT</Select.Option>
         <Select.Option value="DELETE">DELETE</Select.Option>
         <Select.Option value="PATCH">PATCH</Select.Option>
-        <Select.Option value="PATCH">PATCH</Select.Option>
         <Select.Option value="OPTIONS">OPTIONS</Select.Option>
       </Select>
     );
 
+    const Type =
+      (<Select defaultValue="1" style={{width: '90px'}}>
+      <Select.Option value="1">公共分类</Select.Option>
+      <Select.Option value="2">自定义接口</Select.Option>
+    </Select>
+    );
     return (
 
       <Modal
-        title="创建项目"
+        title="添加接口"
         visible={visible}
         onOk={closeModal}
         onCancel={closeModal}
       >
         <Form layout="inline" onSubmit={this.handleSubmit}>
-          <Form.Item
-            validateStatus={userNameError ? 'error' : ''}
-            help={userNameError || ''}
-          >
+
+          <Form.Item>
+            {Type}
+          </Form.Item>
+
+          <Form.Item>
             <Input addonBefore={SelectBefore} placeholder="如：/login" allowClear/>
           </Form.Item>
-          <Form.Item
-            validateStatus={passwordError ? 'error' : ''}
-            help={passwordError || ''}
-          >
-            {getFieldDecorator('password', {
-              rules: [{required: true, message: 'Please input your Password!'}],
-            })(
+          <Form.Item >
               <Input prefix={<Icon type="lock" style={{color: 'rgba(0,0,0,.25)'}}/>} type="password"
                      placeholder="Password"/>
-            )}
           </Form.Item>
           <Form.Item>
             <Button

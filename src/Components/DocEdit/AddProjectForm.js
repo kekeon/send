@@ -27,9 +27,6 @@ class AddProjectForm extends React.Component {
   }
 
   render() {
-    const {
-      getFieldsError
-    } = this.props.form;
 
     const {
       visible,
@@ -48,12 +45,18 @@ class AddProjectForm extends React.Component {
       </Select>
     );
 
-    const Type =
-      (<Select defaultValue="1" style={{width: '90px'}}>
-      <Select.Option value="1">公共分类</Select.Option>
-      <Select.Option value="2">自定义接口</Select.Option>
-    </Select>
-    );
+    const typeList = [
+      {name:'公共分类',id:1},
+      {name:'自定义接口',id:2},
+      {name:'私有接口',id:3}
+    ];
+
+    const formItemLayout = {
+      labelCol: { span: 6 },
+      wrapperCol: { span: 18 },
+    };
+
+    const Type = typeList.map(item=><Select.Option key={item.id} value={item.id}>{item.name}</Select.Option>);
     return (
 
       <Modal
@@ -62,27 +65,19 @@ class AddProjectForm extends React.Component {
         onOk={closeModal}
         onCancel={closeModal}
       >
-        <Form layout="inline" onSubmit={this.handleSubmit}>
+        <Form
+          {...formItemLayout}
+          onSubmit={this.handleSubmit}>
 
-          <Form.Item>
-            {Type}
+          <Form.Item label="接口分类">
+            <Select defaultValue={typeList[0].id}>{Type}</Select>
           </Form.Item>
 
-          <Form.Item>
+          <Form.Item label="接口地址">
             <Input addonBefore={SelectBefore} placeholder="如：/login" allowClear/>
           </Form.Item>
-          <Form.Item >
-              <Input prefix={<Icon type="lock" style={{color: 'rgba(0,0,0,.25)'}}/>} type="password"
-                     placeholder="Password"/>
-          </Form.Item>
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              disabled={this.hasErrors(getFieldsError())}
-            >
-              Log in
-            </Button>
+          <Form.Item label="接口名称">
+            <Input type="text"   placeholder="请输入接口名称"/>
           </Form.Item>
         </Form>
       </Modal>

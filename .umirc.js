@@ -8,7 +8,9 @@ export default {
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       antd: true,
-      dva: true,
+      dva: {
+        hmer: true
+      },
       dynamicImport: false,
       title: 'send',
       dll: false,

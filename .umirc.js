@@ -11,9 +11,11 @@ export default {
       dva: {
         hmer: true
       },
-      dynamicImport: false,
+      dynamicImport: {
+        webpackChunkName: true,
+      },
       title: 'send',
-      dll: false,
+      dll: false
     }],
   ],
   routes: route.routers,

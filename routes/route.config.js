@@ -26,8 +26,10 @@ exports.routers  = [
   },
   {
     path: '/',
-    component: './index',
+    component: './User/login',
   },
+
+
   {
     component: '404',
   },

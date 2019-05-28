@@ -1,6 +1,4 @@
-import React from 'react';
-import { LoginForm } from './User/login';
-export default function () {
-    return (React.createElement(LoginForm, null));
-}
+import { connect } from 'dva';
+import Login from './User/login';
+export default connect()(Login);
 //# sourceMappingURL=index.js.map

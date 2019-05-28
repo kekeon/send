@@ -1,9 +1,7 @@
 import React from 'react';
+import {connect} from 'dva';
 import styles from './index.css';
-import {LoginForm} from './User/login'
+import Login from './User/login'
 
-export default function() {
-  return (
-    <LoginForm></LoginForm>
-  );
-}
+
+export default connect()(Login)

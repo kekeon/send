@@ -1,3 +1,6 @@
+import { delay } from 'roadhog-api-doc';
+
+
 export default {
 
   'POST /api/v1/login': (req, res) => {

@@ -1,6 +1,6 @@
 
 
-import {getUserInfo} from '@/service/userService'
+import {userInfo} from '@/service/userService'
 
 export default {
   namespace: 'user',
@@ -15,7 +15,7 @@ export default {
 
   effects: {
     *get(action, {call, put}) {
-      let info = yield call(getUserInfo)
+      let info = yield call(userInfo)
       yield put({
           type: 'updateState',
           payload: {

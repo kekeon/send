@@ -1,6 +1,5 @@
 
 import http from './http'
-import {AxiosRequestConfig} from 'axios'
 
 import {
   LOGIN,
@@ -9,12 +8,12 @@ import {
 from './api'
 
 
-export function login(payload: {account: string, password: string}) {
+export async function login(payload: {account: string, password: string}): Promise<any> {
   let url = LOGIN;
   return http.post(url, payload)
 }
 
-export function userInfo() {
+export async function userInfo(): Promise<any> {
   let url = USER;
   return http.get(url)
 }

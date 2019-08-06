@@ -1,10 +1,10 @@
 import http from './http';
 import { LOGIN, USER } from './api';
-export function login(payload) {
+export async function login(payload) {
     let url = LOGIN;
     return http.post(url, payload);
 }
-export function userInfo() {
+export async function userInfo() {
     let url = USER;
     return http.get(url);
 }

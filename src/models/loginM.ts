@@ -23,6 +23,7 @@ interface ModelType {
 const model: ModelType = {
   namespace: 'login',
 
+
   state: {
     token: 'root',
     state: 'ok'

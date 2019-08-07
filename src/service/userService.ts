@@ -1,5 +1,6 @@
 
 import http from './http'
+import {LoginInterface} from '../interface/loginInterface'
 
 import {
   LOGIN,
@@ -8,7 +9,7 @@ import {
 from './api'
 
 
-export async function login(payload: {account: string, password: string}): Promise<any> {
+export async function login(payload: LoginInterface): Promise<any> {
   let url = LOGIN;
   return http.post(url, payload)
 }

@@ -1,9 +1,9 @@
-import {login} from "@/service/userService.js";
+import {login} from "@/service/userService";
 import {EffectsCommandMap} from 'dva';
-import {Reducer, Action} from 'redux';
-import {LoginInterface} from '../interface/loginInterface'
+import {Action, Reducer} from 'redux';
+import {LoginInterface} from '../interface/loginInterface';
 
-interface LoginAction extends Action{
+interface LoginAction extends Action {
   payload: LoginInterface
 }
 
@@ -29,7 +29,7 @@ const model: ModelType = {
   },
 
   effects: {
-    *post({payload}, {call, put}) {
+    * post({payload}, {call, put}) {
       let info = yield call(login, payload)
       console.log(info);
       yield put({

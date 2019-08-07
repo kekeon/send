@@ -11,6 +11,7 @@ exports.routers  = [
         path: '/doc/edit',
         component: './Doc/DocEdit',
       },
+
       {
         path: '/doc/history',
         component: './Doc/History',

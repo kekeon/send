@@ -9,6 +9,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "@ant-design/pro-layout": "^4.5.12",
     "antd": "^3.13.6",
     "axios": "^0.18.0",
     "dva": "^2.4.1",

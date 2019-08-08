@@ -1,13 +1,12 @@
 import {login} from "@/service/userService";
-import {EffectsCommandMap} from 'dva';
 import {Action, Reducer} from 'redux';
 import {LoginInterface} from '../interface/loginInterface';
+import {Effect} from "@/models/connect";
 
 interface LoginAction extends Action {
   payload: LoginInterface
 }
 
-type Effect = EffectsCommandMap & { select: <T>(func: (state: object) => T) => T }
 
 interface ModelType {
   namespace: string;

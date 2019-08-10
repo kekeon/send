@@ -1,18 +1,25 @@
 import React from 'react';
 import {connect} from 'dva'
 import router from 'umi/router';
-
+import ReactCanvasNest from 'react-canvas-nest';
 
 import 'antd/dist/antd.css';
-import {Button, Checkbox, Form, Icon, Input, Row, Col} from 'antd';
-import styles from './login.css'
+import {Button,
+  Checkbox,
+  Form,
+  Icon,
+  Input,
+  Row,
+  Col} from 'antd';
+
+import styles from './styles/login.less';
 
 @connect(({login, loading})=>({
   login,
   loading
 }))
 @Form.create()
-class Login extends React.Component {
+class Login extends React.Component<>{
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -33,12 +40,23 @@ class Login extends React.Component {
   render() {
     const {getFieldDecorator} = this.props.form;
     const {loading} = this.props;
+
+    const canvasConfig = {
+      config: {
+        pointColor: '255, 255, 250',
+        lineColor: '255, 255, 255',
+        count: 120,
+      },
+      style:{zIndex: 2 }
+    }
+
     console.log(loading);
     return (
-      <div className={styles.normal}>
-        <h1 className={styles.title}>Welcome use send</h1>
+      <div className={styles['normal']}>
+        <h1 className="title">Welcome use send</h1>
         <Row type="flex" justify="center" align="middle" className="login-row">
-          <Col span={6}>
+          <ReactCanvasNest className = 'canvasNest' {...canvasConfig}/>
+          <Col span={6} className="login-box">
             <Form onSubmit={this.handleSubmit} className="login-form">
               <Form.Item>
                 {getFieldDecorator('userName', {

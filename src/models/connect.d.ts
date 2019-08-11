@@ -2,9 +2,22 @@ import {EffectsCommandMap} from 'dva';
 import { RouterTypes } from 'umi';
 import { MenuDataItem } from '@ant-design/pro-layout';
 
-/**
- *
- */
+export interface Loading {
+  global: boolean;
+  effects: {[key: string]: boolean| undefined}
+  models: {
+    global?: boolean;
+    menu?: boolean;
+    setting?: boolean;
+    user?: boolean;
+  }
+}
+
+export interface ConnectState {
+  loading: Loading;
+}
+
+
 export type Effect = EffectsCommandMap & { select: <T>(func: (state: object) => T) => T }
 
 
@@ -29,5 +42,4 @@ export interface Route extends MenuDataItem {
 export interface ConnectProps<T = {}> extends Partial<RouterTypes<Route, T>> {
   dispatch?: Dispatch;
 }
-
 

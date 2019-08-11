@@ -10,19 +10,31 @@ import {Button,
   Icon,
   Input,
   Row,
-  Col} from 'antd';
+  Col,
+} from 'antd';
 
 import styles from './styles/login.less';
+import {Dispatch, Loading} from "@/models/connect";
+import {FormComponentProps} from "antd/lib/form/Form";
 
+
+
+interface LoginProps  extends FormComponentProps {
+  loading: Loading;
+  dispatch: Dispatch;
+  children: React.ReactElement;
+}
+
+// Type 'ComponentClass<RcBaseFormProps & Pick<Readonly<LoginProps>, "loading" | "dispatch" | "children">, any>' is not assignable to type 'typeof Login'.
 @connect(({login, loading})=>({
   login,
   loading
 }))
-@Form.create()
-class Login extends React.Component<>{
-  handleSubmit = (e) => {
-    e.preventDefault();
 
+class Login extends React.Component<LoginProps>{
+
+
+  handleSubmit = () => {
     const {dispatch, loading} = this.props
 
     this.props.form.validateFields((err, values) => {
@@ -96,5 +108,5 @@ class Login extends React.Component<>{
   }
 }
 
-export default Login
+export default Form.create({name: 'formProps'} )(Login);
 

@@ -27,7 +27,7 @@ exports.routers  = [
   },
   {
     path: '/',
-    component: './User/login.ts',
+    component: './User/login.tsx',
   },
 
 

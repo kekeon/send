@@ -29,9 +29,8 @@ const model: ModelType = {
   },
 
   effects: {
-    * post({payload}, {call, put}) {
+    *post({payload}, {call, put}) {
       let info = yield call(login, payload)
-      console.log(info);
       yield put({
         type: 'update',
         payload: {

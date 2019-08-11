@@ -2,13 +2,13 @@
 import axios from "axios"
 
 
-let http  = axios.create()
+let http  = axios.create({
+  baseURL: "/api/v1"
+})
 
 // 添加请求拦截器
 http.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么
-  config.url = "/api/v1" + config.url
-
   return config;
 }, function (error) {
 
@@ -17,6 +17,9 @@ http.interceptors.request.use(function (config) {
 
 // 添加响应拦截器
 http.interceptors.response.use(function (response) {
+  console.log("response");
+  console.log(response);
+
   // 对响应数据做点什么
   return response.data;
 }, function (error) {

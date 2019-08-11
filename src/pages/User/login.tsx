@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FormEvent} from 'react';
 import {connect} from 'dva'
 import router from 'umi/router';
 import ReactCanvasNest from 'react-canvas-nest';
@@ -25,6 +25,9 @@ interface LoginProps  extends FormComponentProps {
   children: React.ReactElement;
 }
 
+interface FormState {
+
+}
 // Type 'ComponentClass<RcBaseFormProps & Pick<Readonly<LoginProps>, "loading" | "dispatch" | "children">, any>' is not assignable to type 'typeof Login'.
 @connect(({login, loading})=>({
   login,
@@ -34,14 +37,13 @@ interface LoginProps  extends FormComponentProps {
 class Login extends React.Component<LoginProps>{
 
 
-  handleSubmit = () => {
-    const {dispatch, loading} = this.props
+  handleSubmit = (e:FormEvent) => {
+    e.preventDefault();
+    const {dispatch} = this.props
 
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
 
-        console.log(loading.effects);
         dispatch({type:'login/post', payload:values}).then(res=>{
           router.push('/doc/edit')
         })
@@ -67,7 +69,7 @@ class Login extends React.Component<LoginProps>{
       <div className={styles['normal']}>
         <h1 className="title">Welcome use send</h1>
         <Row type="flex" justify="center" align="middle" className="login-row">
-          <ReactCanvasNest className = 'canvasNest' {...canvasConfig}/>
+         {/* <ReactCanvasNest className = 'canvasNest' {...canvasConfig}/>*/}
           <Col span={6} className="login-box">
             <Form onSubmit={this.handleSubmit} className="login-form">
               <Form.Item>

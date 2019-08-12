@@ -1,16 +1,16 @@
-import React from "react"
+import {Component} from "react"
 import {Button} from 'antd';
 
 
 import AddProjectForm from "../../Components/DocEdit/AddProjectForm"
 
-class docLibrary extends React.Component {
+class DocEdit extends Component<any>{
 
   state = {
     visible: false
   }
 
-  showModal = () => {
+  showModal = (e: MouseEvent) => {
     this.setState({
       visible: true
     })
@@ -23,9 +23,10 @@ class docLibrary extends React.Component {
   }
 
   render() {
+
     return (
       <div>
-        <Button onClick={this.showModal}>创建项目</Button>
+        <Button onClick={this.showModal} >创建项目</Button>
         <AddProjectForm
           visible={this.state.visible}
           closeModal = {this.closeModal.bind(this)}

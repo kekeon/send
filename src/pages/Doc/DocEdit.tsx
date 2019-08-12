@@ -1,8 +1,8 @@
-import {Component} from "react"
+import  React, {Component} from "react"
 import {Button} from 'antd';
 
 
-import AddProjectForm from "../../Components/DocEdit/AddProjectForm"
+import AddForm from "./subComp/AddForm"
 
 class DocEdit extends Component<any>{
 
@@ -10,7 +10,7 @@ class DocEdit extends Component<any>{
     visible: false
   }
 
-  showModal = (e: MouseEvent) => {
+  showModal = () => {
     this.setState({
       visible: true
     })
@@ -27,14 +27,15 @@ class DocEdit extends Component<any>{
     return (
       <div>
         <Button onClick={this.showModal} >创建项目</Button>
-        <AddProjectForm
+        <AddForm
           visible={this.state.visible}
-          closeModal = {this.closeModal.bind(this)}
-        ></AddProjectForm>
+          closeModal = {this.closeModal}
+        ></AddForm>
+
       </div>
     )
   }
 }
 
-export default docLibrary
+export default DocEdit
 

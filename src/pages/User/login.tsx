@@ -1,7 +1,6 @@
 import React, {FormEvent} from 'react';
 import {connect} from 'dva'
 import router from 'umi/router';
-import ReactCanvasNest from 'react-canvas-nest';
 
 import 'antd/dist/antd.css';
 import {Button,

@@ -1,12 +1,20 @@
 import React from "react"
 import { connect } from 'dva'
 import {Button} from 'antd'
+import {Dispatch, Loading} from "@/models/connect";
+
+interface MemberProps  {
+  loading: Loading;
+  dispatch: Dispatch;
+  children: React.ReactElement;
+  member?: any;
+}
 
 @connect(({member, loading})=>({
   member,
   loading
 }))
-class Member extends React.Component {
+class Member extends React.Component<MemberProps> {
 
 
   handClick(){

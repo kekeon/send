@@ -5,20 +5,20 @@ exports.routers  = [
   // app
   {
     path: '/doc',
-    component: '../layouts/BasicLayout',
+    component: '../layouts/BasicLayout.tsx',
     routes: [
       {
         path: '/doc/edit',
-        component: './Doc/DocEdit',
+        component: './Doc/DocEdit.tsx',
       },
 
       {
         path: '/doc/history',
-        component: './Doc/History',
+        component: './Doc/History.tsx',
       },
       {
         path: '/doc/member',
-        component: './Doc/Member',
+        component: './Doc/Member.tsx',
       },
       {
         component: '404',

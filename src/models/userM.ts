@@ -29,12 +29,11 @@ const model: UserModel = {
     *get(action, {call, put}) {
       let info = yield call(userInfo)
       yield put({
-        type: 'updateState',
+        type: 'update',
         payload: {
           name: info.data.name
         }
       })
-
     }
   },
 

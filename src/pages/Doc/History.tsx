@@ -1,12 +1,20 @@
 import React from "react"
 import { connect } from 'dva'
 import {Button} from 'antd'
+import {Dispatch, Loading} from "@/models/connect";
+
+interface HistoryProps  {
+  loading: Loading;
+  dispatch: Dispatch;
+  children: React.ReactElement;
+  user: any;
+}
 
 @connect(({user, loading})=>({
   user,
   loading
 }))
-class History extends React.Component {
+class History extends React.Component<HistoryProps> {
 
 
   handClick(){

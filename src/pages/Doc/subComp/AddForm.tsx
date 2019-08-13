@@ -49,12 +49,12 @@ class AddProjectForm extends Component<AddProjectFormProps> {
     const Option = Select.Option;
     const SelectBefore = (
       <Select defaultValue="GET" style={{width: '120px'}}>
-        <Option value="GET"/>
-        <Option value="POST"/>
-        <Option value="PUT"/>
-        <Option value="DELETE"/>
-        <Option value="PATCH"/>
-        <Option value="OPTIONS"/>
+        <Option value="GET">GET </Option>
+        <Option value="POST">POST</Option>
+        <Option value="PUT">PUT </Option>
+        <Option value="DELETE">DELETE</Option>
+        <Option value="PATCH">PATCH </Option>
+        <Option value="OPTIONS">OPTIONS </Option>
       </Select>
     );
 

@@ -11,7 +11,7 @@ import NavBreadcrumb from "@/common/components/NavBreadcrumb";
 
 const Content = Layout.Content;
 
-export default class Main extends React.Component {
+class Main extends React.Component<any> {
 
   render() {
     const { children } = this.props;
@@ -37,3 +37,4 @@ export default class Main extends React.Component {
   }
 }
 
+export default Main

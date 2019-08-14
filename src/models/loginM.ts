@@ -1,7 +1,7 @@
-import {login} from "@/service/userService";
-import {Action, Reducer} from 'redux';
-import {LoginInterface} from '../interface/loginInterface';
-import {Effect} from "@/models/connect";
+import { login } from '@/service/userService';
+import { Action, Reducer } from 'redux';
+import { LoginInterface } from '../interface/loginInterface';
+import { Effect } from '@/models/connect';
 
 interface LoginAction extends Action {
   payload: LoginInterface
@@ -29,7 +29,7 @@ const model: ModelType = {
   },
 
   effects: {
-    *post({payload}, {call, put}) {
+    * post({payload}, {call, put}) {
       let info = yield call(login, payload)
       yield put({
         type: 'update',
@@ -41,7 +41,7 @@ const model: ModelType = {
   },
 
   reducers: {
-    update(state, {payload}) {
+    update(state: object, {payload}) {
       return {
         ...state,
         ...payload,

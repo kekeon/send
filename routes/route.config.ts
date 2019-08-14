@@ -1,6 +1,5 @@
-
-
-exports.routers  = [
+// noinspection aegis.code.check.validation.typescript.format
+exports.routers = [
 
   // app
   {
@@ -35,3 +34,4 @@ exports.routers  = [
     component: '404',
   },
 ];
+

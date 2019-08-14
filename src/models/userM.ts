@@ -1,7 +1,8 @@
-import {userInfo} from '@/service/userService'
-import {Action} from "history";
-import {Effect} from "@/models/connect";
-import {Reducer} from "redux";
+import { userInfo } from '@/service/userService'
+import { Action } from 'history';
+import { Effect } from '@/models/connect';
+import { Reducer } from 'redux';
+import any = jasmine.any;
 
 
 interface UserModel {
@@ -12,10 +13,11 @@ interface UserModel {
   };
   reducers: {
     update: Reducer<{}>;
-  };}
+  };
+}
 
 const model: UserModel = {
-  namespace: "user",
+  namespace: 'user',
 
   state: {
     name: 'root',
@@ -26,7 +28,7 @@ const model: UserModel = {
   },
 
   effects: {
-    *get(action, {call, put}) {
+    * get(_, {call, put}) {
       let info = yield call(userInfo)
       yield put({
         type: 'update',
@@ -38,7 +40,7 @@ const model: UserModel = {
   },
 
   reducers: {
-    update(state, {payload}) {
+    update(state: any, {payload} ) {
       return {
         ...state,
         ...payload,

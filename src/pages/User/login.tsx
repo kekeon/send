@@ -1,24 +1,16 @@
-import React, {FormEvent} from 'react';
-import {connect} from 'dva'
+import React, { FormEvent } from 'react';
+import { connect } from 'dva'
 import router from 'umi/router';
 
 import 'antd/dist/antd.css';
-import {Button,
-  Checkbox,
-  Form,
-  Icon,
-  Input,
-  Row,
-  Col,
-} from 'antd';
+import { Button, Checkbox, Col, Form, Icon, Input, Row, } from 'antd';
 
 import styles from './styles/login.less';
-import {Dispatch, Loading} from "@/models/connect";
-import {FormComponentProps} from "antd/lib/form/Form";
+import { Dispatch, Loading } from '@/models/connect';
+import { FormComponentProps } from 'antd/lib/form/Form';
 
 
-
-interface LoginProps  extends FormComponentProps {
+interface LoginProps extends FormComponentProps {
   loading: Loading;
   dispatch: Dispatch;
   children: React.ReactElement;
@@ -27,23 +19,24 @@ interface LoginProps  extends FormComponentProps {
 interface FormState {
 
 }
+
 // Type 'ComponentClass<RcBaseFormProps & Pick<Readonly<LoginProps>, "loading" | "dispatch" | "children">, any>' is not assignable to type 'typeof Login'.
-@connect(({login, loading})=>({
+@connect(({login, loading}) => ({
   login,
   loading
 }))
 
-class Login extends React.Component<LoginProps>{
+class Login extends React.Component<LoginProps> {
 
 
-  handleSubmit = (e:FormEvent) => {
+  handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const {dispatch} = this.props
 
     this.props.form.validateFields((err, values) => {
       if (!err) {
 
-        dispatch({type:'login/post', payload:values}).then(res=>{
+        dispatch({type: 'login/post', payload: values}).then(res => {
           router.push('/doc/edit')
         })
       }
@@ -60,7 +53,7 @@ class Login extends React.Component<LoginProps>{
         lineColor: '255, 255, 255',
         count: 120,
       },
-      style:{zIndex: 2 }
+      style: {zIndex: 2}
     }
 
     console.log(loading);
@@ -68,7 +61,7 @@ class Login extends React.Component<LoginProps>{
       <div className={styles['normal']}>
         <h1 className="title">Welcome use send</h1>
         <Row type="flex" justify="center" align="middle" className="login-row">
-         {/* <ReactCanvasNest className = 'canvasNest' {...canvasConfig}/>*/}
+          {/* <ReactCanvasNest className = 'canvasNest' {...canvasConfig}/>*/}
           <Col span={6} className="login-box">
             <Form onSubmit={this.handleSubmit} className="login-form">
               <Form.Item>
@@ -109,5 +102,5 @@ class Login extends React.Component<LoginProps>{
   }
 }
 
-export default Form.create({name: 'formProps'} )(Login);
+export default Form.create({name: 'formProps'})(Login);
 

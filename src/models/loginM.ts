@@ -38,14 +38,8 @@ const model: ModelType = {
             token: res.token
           }
         });
-        console.log("=============");
-
-        console.log(res);
         return res;
       }catch (e) {
-        console.log("=======errr======");
-
-        console.log(e);
         return Promise.reject(e);
       }
 

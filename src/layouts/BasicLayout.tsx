@@ -4,10 +4,9 @@ import styles from './index.css';
 import { Layout } from 'antd';
 
 
-import NavHeader from '@/common/components/NavHeader';
-import NavMenu from '@/common/components/NavMenu';
-import NavBreadcrumb from '@/common/components/NavBreadcrumb';
-
+import NavHeader from '@/components/layout/NavHeader.tsx';
+import NavMenu from '@/components/layout/NavMenu.tsx';
+import NavBreadcrumb from '@/components/layout/NavBreadcrumb.tsx';
 
 const Content = Layout.Content;
 

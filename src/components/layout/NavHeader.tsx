@@ -1,9 +1,7 @@
+import { Layout, Menu } from 'antd';
 import React from 'react';
-import {Layout, Menu} from 'antd';
-import NavHeaderStyles from '../style/NavHeader.scss';
 import Link from 'umi/link';
-
-
+import NavHeaderStyles from './style/NavHeader.less';
 
 const Header = Layout.Header;
 
@@ -11,19 +9,19 @@ const Header = Layout.Header;
 export default class NavHeader extends React.Component {
 
 
-  toPage(prop){
+  toPage(prop: any) {
     console.log(prop);
   }
 
-  render (){
+  render() {
     return (
-      <Header className={NavHeaderStyles["nav-header"]}>
-        <div className="logo" />
+      <Header className={NavHeaderStyles['nav-header']}>
+        <div className="logo"/>
         <Menu
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={['/doc/edit']}
-          style={{ lineHeight: '40px' }}
+          style={{lineHeight: '40px'}}
           onClick={this.toPage}
         >
           <Menu.Item key="/doc/edit">
@@ -37,7 +35,6 @@ export default class NavHeader extends React.Component {
           </Menu.Item>
         </Menu>
       </Header>
-    )
+    );
   }
 }
-

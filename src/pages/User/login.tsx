@@ -1,13 +1,13 @@
-import React, { FormEvent } from 'react';
-import { connect } from 'dva'
-import router from 'umi/router';
+import { Dispatch, Loading } from '@/models/connect';
+import { Button, Checkbox, Col, Form, Icon, Input, Row } from 'antd';
 
 import 'antd/dist/antd.css';
-import { Button, Checkbox, Col, Form, Icon, Input, Row, } from 'antd';
+import { FormComponentProps } from 'antd/lib/form/Form';
+import { connect } from 'dva';
+import React, { FormEvent } from 'react';
+import router from 'umi/router';
 
 import styles from './styles/login.less';
-import { Dispatch, Loading } from '@/models/connect';
-import { FormComponentProps } from 'antd/lib/form/Form';
 
 
 interface LoginProps extends FormComponentProps {
@@ -21,27 +21,30 @@ interface FormState {
 }
 
 // Type 'ComponentClass<RcBaseFormProps & Pick<Readonly<LoginProps>, "loading" | "dispatch" | "children">, any>' is not assignable to type 'typeof Login'.
-@connect(({login, loading}) => ({
-  login,
-  loading
-}))
+@connect(({login, loading}) => {
+  console.log(loading);
+  return {
+    login: loading.effects['login/post'],
+    loading
+  };
+})
 
 class Login extends React.Component<LoginProps> {
 
 
   handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const {dispatch} = this.props
+    const {dispatch} = this.props;
 
     this.props.form.validateFields((err, values) => {
       if (!err) {
 
         dispatch({type: 'login/post', payload: values}).then(res => {
-          router.push('/doc/edit')
-        })
+          router.push('/doc/edit');
+        });
       }
     });
-  }
+  };
 
   render() {
     const {getFieldDecorator} = this.props.form;
@@ -51,10 +54,10 @@ class Login extends React.Component<LoginProps> {
       config: {
         pointColor: '255, 255, 250',
         lineColor: '255, 255, 255',
-        count: 120,
+        count: 120
       },
       style: {zIndex: 2}
-    }
+    };
 
     console.log(loading);
     return (
@@ -66,14 +69,14 @@ class Login extends React.Component<LoginProps> {
             <Form onSubmit={this.handleSubmit} className="login-form">
               <Form.Item>
                 {getFieldDecorator('userName', {
-                  rules: [{required: true, message: 'Please input your username!'}],
+                  rules: [{required: true, message: 'Please input your username!'}]
                 })(
                   <Input prefix={<Icon type="user" style={{color: 'rgba(0,0,0,.25)'}}/>} placeholder="Username"/>
                 )}
               </Form.Item>
               <Form.Item>
                 {getFieldDecorator('password', {
-                  rules: [{required: true, message: 'Please input your Password!'}],
+                  rules: [{required: true, message: 'Please input your Password!'}]
                 })(
                   <Input prefix={<Icon type="lock" style={{color: 'rgba(0,0,0,.25)'}}/>} type="password"
                          placeholder="Password"/>
@@ -82,7 +85,7 @@ class Login extends React.Component<LoginProps> {
               <Form.Item>
                 {getFieldDecorator('remember', {
                   valuePropName: 'checked',
-                  initialValue: true,
+                  initialValue: true
                 })(
                   <Checkbox>Remember me</Checkbox>
                 )}
@@ -103,4 +106,3 @@ class Login extends React.Component<LoginProps> {
 }
 
 export default Form.create({name: 'formProps'})(Login);
-

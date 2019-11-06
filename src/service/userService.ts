@@ -1,6 +1,6 @@
 
 import http from './http'
-import {LoginInterface} from '../interface/loginInterface'
+import { LoginInterface } from '@/interface/loginInterface'
 
 import {
   LOGIN,
@@ -11,11 +11,11 @@ from './api'
 
 export async function login(payload: LoginInterface): Promise<any> {
   let url = LOGIN;
-  return http.post(url, payload)
+  return http().post(url, payload)
 }
 
 export async function userInfo(): Promise<any> {
   let url = USER;
-  return http.get(url)
+  return http().get(url)
 }
 

@@ -1,5 +1,5 @@
-import React from "react"
-import {Breadcrumb} from 'antd';
+import { Breadcrumb } from 'antd';
+import React from 'react';
 
 
 export default class NavBreadcrumb extends React.Component {
@@ -11,7 +11,6 @@ export default class NavBreadcrumb extends React.Component {
         <Breadcrumb.Item>List</Breadcrumb.Item>
         <Breadcrumb.Item>App</Breadcrumb.Item>
       </Breadcrumb>
-    )
+    );
   }
 }
-

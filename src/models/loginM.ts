@@ -1,6 +1,6 @@
 import { login } from '@/service/userService';
 import { Action, Reducer } from 'redux';
-import { LoginInterface } from '../interface/loginInterface';
+import { LoginInterface } from '@/interface/loginInterface';
 import { Effect } from '@/models/connect';
 
 interface LoginAction extends Action {
@@ -29,26 +29,37 @@ const model: ModelType = {
   },
 
   effects: {
-    * post({payload}, {call, put}) {
-      let info = yield call(login, payload)
-      yield put({
-        type: 'update',
-        payload: {
-          token: info.token
-        }
-      })
+    *post({payload}: LoginAction, {call, put}: Effect) {
+      try {
+        let res = yield call(login, payload);
+        yield put({
+          type: 'update',
+          payload: {
+            token: res.token
+          }
+        });
+        console.log("=============");
+
+        console.log(res);
+        return res;
+      }catch (e) {
+        console.log("=======errr======");
+
+        console.log(e);
+        return Promise.reject(e);
+      }
+
     }
   },
 
   reducers: {
-    update(state: object, {payload}) {
+    update(state: object, {payload}: any) {
       return {
         ...state,
-        ...payload,
-      }
-    },
+        ...payload
+      };
+    }
   }
-}
+};
 
-export default model
-
+export default model;

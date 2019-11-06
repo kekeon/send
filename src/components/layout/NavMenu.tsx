@@ -1,7 +1,7 @@
-import React from 'react'
-import {Icon, Layout, Menu,} from 'antd';
+import { Icon, Layout, Menu } from 'antd';
+import React from 'react';
 
-const Sider = Layout.Sider
+const Sider = Layout.Sider;
 const {SubMenu} = Menu;
 
 
@@ -36,7 +36,6 @@ export default class NavMenu extends React.Component {
           </SubMenu>
         </Menu>
       </Sider>
-    )
+    );
   }
 }
-
